@@ -44,7 +44,7 @@ for(int i = 0; i<5; i++){
     if(ballArea[i].getX()<=0 || ballArea[i].getX() > getWidth()-20){
         ballArea[i].xChageSpeed();
 //ballArea[i].yChangeSpeed();
-        System.out.println("Cheese");
+        System.out.println("Cheese!");
     }
 if(ballArea[i].getY()<=0 || ballArea[i].getY() > getHeight()+20){
     ballArea[i].yChangeSpeed();
