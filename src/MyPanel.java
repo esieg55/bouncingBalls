@@ -16,12 +16,12 @@ int xVel = 15;
     public MyPanel(){
         setBackground(Color.MAGENTA);
 for(int i = 0; i<5; i++){
-    ballArea[i]=new Ball(xLoc,yLoc);
-    xLoc+=7;
-    yLoc+=2;
+    ballArea[i] = new Ball();
+    ///xLoc+=7;
+    // yLoc+=2;
 }
          myBall = new Ball(200,300);
-mySecondBall = new Ball(350,450);
+        mySecondBall = new Ball(320, 450);
 
 // setBackground(new Color(200,1,99));
     }
@@ -37,18 +37,24 @@ g.fillOval(xLoc,300,20,20);*/
     myBall.move();
     mySecondBall.draw(g);
     mySecondBall.move();
-for(int i = 0; i<5; i++){
+    for (int i = 0; i < 5; i++) {
     ballArea[i].draw(g);
     ballArea[i].move();
+        ballArea[i].setSize();
+        //ballArea[i].random(color);
     //lefft wall                    right
-    if(ballArea[i].getX()<=0 || ballArea[i].getX() > getWidth()-20){
+        //ballArea[i].getX() <= 0 || ballArea[i].getX() > getWidth() - 20
+
+        if (ballArea[i].getX() <= 0 || ballArea[i].getX() > getWidth()) {
         ballArea[i].xChageSpeed();
+            ballArea[i].draw(g);
 //ballArea[i].yChangeSpeed();
         System.out.println("Cheese!");
     }
-if(ballArea[i].getY()<=0 || ballArea[i].getY() > getHeight()+20){
-    ballArea[i].yChangeSpeed();
-            }
+        if (ballArea[i].getY() <= 0 || ballArea[i].getY() > getHeight()) {
+            ballArea[i].yChangeSpeed();
+        }
+    }
 //xLoc+=xVel;
 //yLoc-=5;
 //doesn't work right
@@ -65,13 +71,16 @@ g.setColor(Color.red);
 g.drawLine(80, 95,300, 440);
 
 try {
-    Thread.sleep(100);
+    Thread.sleep(10);
 }
 catch(Exception e){
     System.out.println(e);
 }
     repaint();
 
-    } }}
+
+}
+}
+
 
 

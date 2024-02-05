@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
 
         JFrame frame = new JFrame();
-        frame.setSize(500, 500);
+        frame.setSize(450, 450);
 
         MyPanel panel = new MyPanel();
      // panel.setBackground(Color.RED);
